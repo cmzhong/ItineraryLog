@@ -1,0 +1,75 @@
+/* classname is with a i
+id is with a # */
+
+body {
+    box-sizing: border-box;
+    font-family: 'Courier New', Courier, monospace;
+    margin: 2;
+    padding: 0;
+    color: #00416a;
+    text-shadow: 2px 2px #f0ead6;
+    background-color: #b6c5b8;
+}
+
+#header {
+    letter-spacing: .3em;
+    margin-bottom: 10px;
+}
+
+/* general buttons */
+button {
+  border-radius: 6px 6px;
+  margin-left: 1em;
+}
+
+/* the city buttons */
+#city {
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 2em;
+    padding: 5px;
+    margin: 10px;
+    border-radius: 5px 5px;
+    color: #71684A;
+}
+
+/* when you hover over any button */
+button:hover {
+  box-shadow: 
+  inset 0em -.1em .1em #a8a085, 
+        .1em .1em .1em #a8a085;
+}
+
+/* the main container's headers */
+h3 {
+  color: #78364f;
+  text-shadow: 1px 1px #dfd7fc;
+}
+
+/* the city page's top header */
+h4 {
+  
+}
+
+/* the city page's page headers */
+h5 {
+  text-align: left;
+  margin-left: 5em;
+  text-decoration: underline;
+  text-shadow: none;
+}
+
+/* the main container */
+.outerBox {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 10px;
+    box-shadow: 2px 2px 2px rgba(0, 0, 0, .2);
+    border-radius: 5px;
+}
+
+.innerbox {
+    background: #f0ead6;
+    padding: 1px;
+    width: 85%;
+    margin: 5px auto;
+}
