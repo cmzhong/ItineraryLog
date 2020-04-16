@@ -1,4 +1,4 @@
-/* classname is with a i
+/* classname is with a .
 id is with a # */
 
 body {
@@ -20,6 +20,7 @@ body {
 button {
   border-radius: 6px 6px;
   margin-left: 1em;
+  margin-bottom: 2em;
 }
 
 /* the city buttons */
@@ -31,6 +32,12 @@ button {
     border-radius: 5px 5px;
     color: #71684A;
 }
+/* get hover over delete button to have box shadow red to work eventually */
+/* #id:hover {
+  box-shadow: 
+  inset 0em -.1em .1em red, 
+        .1em .1em .1em red;
+} */
 
 /* when you hover over any button */
 button:hover {
@@ -72,4 +79,14 @@ h5 {
     padding: 1px;
     width: 85%;
     margin: 5px auto;
+}
+
+ul {
+  list-style-type: circle;
+  text-align: left;
+}
+
+/* align city page's things to the left */
+#lists {
+
 }

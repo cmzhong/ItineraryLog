@@ -1,6 +1,6 @@
 import React from 'react';
 import CityDisplay from './CityDisplay';
-import CityPage from './CityPage'
+import CityContainer from '../containers/CityContainer'
 
 const CitiesDisplay = (props) => {
   let cities = [];
@@ -16,7 +16,7 @@ const CitiesDisplay = (props) => {
     <h3>Cities</h3>
     { showAllCities ?
      cities
-     : <CityPage cityClicked={ props.cityClicked } clickedCityId={ props.clickedCityId } 
+     : <CityContainer cityClicked={ props.cityClicked } clickedCityId={ props.clickedCityId } 
      clickedCityName = { props.clickedCityName } deleteCity={ props.deleteCity } /> 
     }
     

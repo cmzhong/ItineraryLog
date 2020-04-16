@@ -2,26 +2,25 @@ const path = require('path');
 const express = require('express');
 const bodyParser = require('body-parser');
 
+const routes = require('./routes/api');
+
 const app = express();
-
-const apiRouter = require('./routes/api');
-
 const PORT = 3000; 
 
-app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({ extended: true }))
+app.use(express.json());
 
-// app.use('/api', apiRouter);
+app.use('/api', routes);
 
-app.get('/', (req, res)=> res.status(200).sendFile(path.resolve(__dirname, '../index.html')));
 app.get('/build/bundle.js', (req, res)=> res.status(200).sendFile(path.resolve(__dirname, '../build/bundle.js')))
+app.get('/', (req, res)=> res.status(200).sendFile(path.resolve(__dirname, '../index.html')));
+app.get('/client/styles.css', (req, res)=> res.status(200).sendFile(path.resolve(__dirname, '../client/styles.css')))
 
-// error handler for routes into the known
-app.use((req, res)=> res.sendStatus(404));
+// catch-call error handler for routes into the unknown
+app.use('/', (req, res)=> res.sendStatus(404));
 
-// express catch-all error handler
-app.use((err, req, res, next)=> {
-    let errorMessage = `you've found the catch-all error handler`
+// error handler
+app.use('/', (err, req, res, next)=> {
+    let errorMessage = `you've found the error handler`;
     if (err) errorMessage = err;
 
     console.log(err);
