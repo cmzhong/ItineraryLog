@@ -2,37 +2,48 @@ const db = require('../models/newItinerary.js');
 
 const itineraryController = {};
 
-itineraryController.getItineraries = (req, res, next) => {
-    const allCities = 
-    `SELECT city.*,  activities.name activities, items.listitem listItem 
-    FROM city 
-    LEFT JOIN activities 
-    ON city._id = activities.city_id
-    LEFT JOIN items
-    ON activities._id = items.activities_id`
+itineraryController.getCityNames = (req, res, next) => {
+    const cityNames = 
+    `SELECT _id, name FROM city`
 
-    db.query(allCities)
+    db.query(cityNames)
     .then(citiesData => {
-      res.locals.allCities = citiesData.rows; 
+      res.locals.cityNames = citiesData.rows; 
       next();
     })
     .catch(err => next('error in getItineraries middleware'))
 }
 
-itineraryController.getCity = (req, res, next) => {
-  const city = 'sql query goes here'
-  const cityId = [ req.query.id ]
+itineraryController.addCityName = (req, res, next) =>{
+    const newCity = 
+    `INSERT INTO city(name) VALUES($1)`
+    const cityName = [ req.body[0] ];
 
-  db.query(city, cityId)
-  .then(foundCity => {
-    next();
+    db.query(newCity, cityName)
+    .then(data=>{
+      res.locals.new = data;
+      next();
     })
-    .catch(err => next('error in getCity middleware'))
+    .catch(err=>next('error in addCityName middleware'))
+
 }
 
+itineraryController.deleteCityName = (req, res, next) =>{
+    const deleteCity = 
+    `DELETE FROM city WHERE name = $1`
+    const deleteMe = [ req.query['0'] ]
+    console.log(deleteMe)
 
-itineraryController.deleteItinerary = (req, res, next) => {
-    
+    db.query(deleteCity, deleteMe)
+    .then(data=>{
+        console.log(data)
+        res.locals.deleted = data;
+        next();
+    })
+    .catch(err=>next('error in deleteCityName middleware'))
+
+
 }
+
 
 module.exports = itineraryController;

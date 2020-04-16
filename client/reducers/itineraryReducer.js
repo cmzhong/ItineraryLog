@@ -19,7 +19,7 @@ const itineraryReducer = (state = initialState, action) =>{
     
   switch(action.type){
     case types.ADD_CITY:
-      const newCity = {
+      let newCity = {
           cityId: state.lastCityId + 1, 
           name: action.payload,
           things: [],
@@ -109,11 +109,26 @@ const itineraryReducer = (state = initialState, action) =>{
     }
 
     case types.LOAD_CITIES:
-      console.log('are you in the reducer??');
-      console.log(action.payload);
+      const data = action.payload.data;
+      
+      citiesList = [];
+
+      for (let el of data){
+
+        let databaseCity = {
+          cityId: el._id, 
+          name: el.name,
+          things: [],
+          food: [],
+          drink: [],
+          notes: [],
+       }
+        citiesList.push(databaseCity)
+      }
+
       return {
         ...state,
-        citiesList: action.payload
+        citiesList,
       }
 
     default:

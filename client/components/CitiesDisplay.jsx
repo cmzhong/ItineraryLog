@@ -16,7 +16,7 @@ const CitiesDisplay = (props) => {
     <h3>Cities</h3>
     { showAllCities ?
      cities
-     : <CityContainer cityClicked={ props.cityClicked } clickedCityId={ props.clickedCityId } 
+     : <CityContainer deleteDatabaseCity={ props.deleteDatabaseCity } cityClicked={ props.cityClicked } clickedCityId={ props.clickedCityId } 
      clickedCityName = { props.clickedCityName } deleteCity={ props.deleteCity } /> 
     }
     

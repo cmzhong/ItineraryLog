@@ -20,7 +20,9 @@ const mapDispatchToProps = dispatch =>({
   addCity: (name)=>dispatch(actions.addCity(name)),
   deleteCity: (cityId)=>dispatch(actions.deleteCity(cityId)),
   cityClicked: ([ cityId, cityName ])=>dispatch(actions.cityClicked( [ cityId, cityName ] )),
-  loadCities: ()=>dispatch(actions.loadCities()) 
+  loadCities: ()=>dispatch(actions.loadCities()),
+  newDatabaseCity: (name)=>dispatch(actions.newDatabaseCity(name)),
+  deleteDatabaseCity: ([ name, id ])=>dispatch(actions.deleteDatabaseCity([ name, id ]))
 })
 
 class ItineraryContainer extends Component {
@@ -36,10 +38,11 @@ class ItineraryContainer extends Component {
         return(
             // maybe change className to innerbox2 later?
             <div className="innerbox">
-                <CreateDeleteCitiesDisplay addCity={ this.props.addCity } /> 
+                <CreateDeleteCitiesDisplay newDatabaseCity={ this.props.newDatabaseCity } addCity={ this.props.addCity } /> 
                 <CitiesDisplay citiesList={ this.props.citiesList } cityClicked={ this.props.cityClicked } 
                 showAllCities={ this.props.showAllCities } clickedCityId={ this.props.clickedCityId } 
-                clickedCityName={ this.props.clickedCityName } deleteCity={ this.props.deleteCity }/> 
+                clickedCityName={ this.props.clickedCityName } deleteCity={ this.props.deleteCity }
+                deleteDatabaseCity={ this.props.deleteDatabaseCity } /> 
                 {/* potential save button */}
             </div>
         )

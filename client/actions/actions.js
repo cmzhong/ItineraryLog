@@ -36,3 +36,27 @@ export const allCities = (data) => ({
     type: types.LOAD_CITIES,
     payload: data
 })
+
+export const newDatabaseCity = (name) => {
+    return (dispatch)=>{
+        axios.post('/api', [ name ] )
+        .then((response)=>{
+            console.log(response)
+            dispatch(addCity(name))
+        })
+        .catch(err => console.log('error in axios post :', err))
+    }
+}
+
+//args = [ name, id ]
+export const deleteDatabaseCity = (args) => {
+    let deleteMe = args[0]
+    console.log(args)
+    return (dispatch) =>{
+      axios.delete('/api', { params: args })
+      .then((response)=>{
+        dispatch(deleteCity(args[1]))
+       })
+      .catch(err => console.log('error in axios delete :', err))
+    }
+}

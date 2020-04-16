@@ -85,7 +85,7 @@ class CityContainer extends Component {
         </form>
 
 
-        <button id="delete" type="button" onClick={ ()=> { if (window.confirm('Are you sure you want to delete this item?')) this.props.deleteCity(this.props.clickedCityId) } }>Delete this City</button>
+        <button id="delete" type="button" onClick={ ()=> { if (window.confirm('Are you sure you want to delete this item?')) this.props.deleteDatabaseCity([ this.props.clickedCityName, this.props.clickedCityId ]) } }>Delete this City</button>
         {/* potential save button */}
         <button id="standard" type="button" onClick={ ()=> this.props.cityClicked([]) }>Back to all Cities</button>
 
