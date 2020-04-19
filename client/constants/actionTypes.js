@@ -7,3 +7,5 @@ export const CITY_CLICKED = "CITY_CLICKED";
 export const ADD_LIST = "ADD_LIST";
 
 export const LOAD_CITIES = "LOAD_CITIES"
+
+export const LOAD_CITY = "LOAD_CITY"

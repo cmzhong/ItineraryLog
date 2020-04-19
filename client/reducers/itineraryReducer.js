@@ -2,6 +2,7 @@ import * as types from '../constants/actionTypes.js';
 import { bindActionCreators } from 'redux';
 import thunk from 'redux-thunk'
 import { connect } from 'react-redux';
+import { loadCities } from '../actions/actions.js';
 
 const initialState = {
     citiesList: [],
@@ -20,7 +21,7 @@ const itineraryReducer = (state = initialState, action) =>{
   switch(action.type){
     case types.ADD_CITY:
       let newCity = {
-          cityId: state.lastCityId + 1, 
+          cityId: '', 
           name: action.payload,
           things: [],
           food: [],
@@ -30,13 +31,12 @@ const itineraryReducer = (state = initialState, action) =>{
       
       citiesList = state.citiesList.slice();
       citiesList.push(newCity);
-
-      let lastCityId = state.lastCityId + 1;
+      loadCities();
+      // let lastCityId = state.lastCityId + 1;
 
       return {
           ...state,
           citiesList,
-          lastCityId
       }
 
     case types.DELETE_CITY:
@@ -95,13 +95,13 @@ const itineraryReducer = (state = initialState, action) =>{
     // shallow copying an obj
     clickedCityObject = Object.assign({}, state.clickedCityObject);
 
-    for (let el of citiesList){
+    for (let el of state.citiesList){
       if (el.cityId === action.payload[0]){
         clickedCityObject = el;
         el[action.payload[1]].push(action.payload[2])
       }
     }
-    console.log(clickedCityObject)
+
     return {
       ...state,
       citiesList,
@@ -110,7 +110,7 @@ const itineraryReducer = (state = initialState, action) =>{
 
     case types.LOAD_CITIES:
       const data = action.payload.data;
-      
+
       citiesList = [];
 
       for (let el of data){
@@ -122,7 +122,7 @@ const itineraryReducer = (state = initialState, action) =>{
           food: [],
           drink: [],
           notes: [],
-       }
+        }
         citiesList.push(databaseCity)
       }
 
@@ -130,10 +130,48 @@ const itineraryReducer = (state = initialState, action) =>{
         ...state,
         citiesList,
       }
+    
+    case types.LOAD_CITY:
+
+    let cityDetails = action.payload.data;
+
+    clickedCityObject = {
+      cityId: state.lastCityId, 
+      name: state.clickedCityName,
+      things: [],
+      food: [],
+      drink: [],
+      notes: [],
+    }
+      
+    for (let el of cityDetails){
+      if (el.activity === 'seeing'){
+        clickedCityObject.things.push(el.listitem)
+      }
+
+      if (el.activity === 'eating'){
+        clickedCityObject.food.push(el.listitem)
+      }
+
+      if (el.activity === 'drinking'){
+        clickedCityObject.drink.push(el.listitem)
+      }
+
+      if (el.activity === 'notes'){
+        clickedCityObject.notes.push(el.listitem)
+      }
+    }
+
+    return {
+      ...state,
+      clickedCityObject
+    }
+
 
     default:
         return state;
   }
+
 }
 
 export default itineraryReducer;

@@ -46,19 +46,20 @@ button:hover {
         .1em .1em .1em #a8a085;
 }
 
+/* the city title on the city page */
+h2 {
+  color: #e34f4f;
+  font-size: 3em;
+  text-shadow: 3px 3px white;
+}
+
 /* the main container's headers */
 h3 {
   color: #78364f;
-  text-shadow: 1px 1px #dfd7fc;
-}
-
-/* the city page's top header */
-h4 {
-  
 }
 
 /* the city page's page headers */
-h5 {
+h4 {
   text-align: left;
   margin-left: 5em;
   text-decoration: underline;
@@ -84,9 +85,12 @@ h5 {
 ul {
   list-style-type: circle;
   text-align: left;
+  margin-left: 4em;
+  margin-right: 1em;
+  color: #4d4d00;
 }
 
 /* align city page's things to the left */
-#lists {
+/* #lists {
 
-}
+} */

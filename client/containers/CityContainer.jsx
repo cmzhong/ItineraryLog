@@ -7,7 +7,9 @@ const mapStateToProps = state => ({
 })
 
 const mapDispatchToProps = dispatch => ({
-  addList: ( [ cityId, listName, addItem ] )=> dispatch(actions.addList( [ cityId, listName, addItem ]))
+  addList: ( [ cityId, listName, addItem ] )=> dispatch(actions.addList( [ cityId, listName, addItem ])),
+  loadCityData: (cityId)=>dispatch(actions.loadCityData(cityId)),
+  updateCityDetails: ([ cityId, activity, input, listName, cityName ])=>dispatch(actions.updateCityDetails([ cityId, activity, input, listName, cityName ]))
 })
 
 class CityContainer extends Component {
@@ -16,15 +18,15 @@ class CityContainer extends Component {
     super(props)
   }
 
+  componentDidMount(){
+    this.props.loadCityData(this.props.clickedCityId);  
+  }
+
+  componentDidUpdate(){
+    this.props.loadCityData(this.props.clickedCityId);  
+  }
+
   render(){
-  //   const newCity = {
-  //     cityId: state.lastCityId + 1, 
-  //     name: action.payload,
-  //     things: [],
-  //     food: [],
-  //     drink: [],
-  //     notes: [],
-  // }
 
     let clickedCityObject = this.props.clickedCityObject; 
 
@@ -39,45 +41,45 @@ class CityContainer extends Component {
 
     return (
       <div id="lists">
-        <h4>{ this.props.clickedCityName }</h4>  
-        <h5>Things and Sights</h5>
+        <h2> -- { this.props.clickedCityName } --</h2>  
+        <h4>Things and Sights</h4>
         <ul>{ thingList }</ul>
           <form onSubmit={(e)=> {
           e.preventDefault();
-          { this.props.addList( [ this.props.clickedCityId, 'things', e.target.childNodes[0].value ])}
+          { this.props.updateCityDetails( [ this.props.clickedCityId, 2, e.target.childNodes[0].value, 'things', this.props.clickedCityName ])}
           }}>
 
         <input type="text"></input> 
         <button type="submit">Add</button>
         </form>
 
-        <h5>Feeding Grounds</h5>
+        <h4>Feeding Grounds</h4>
         <ul>{ foodList }</ul>
         <form onSubmit={(e)=> {
           e.preventDefault();
-          { this.props.addList([ this.props.clickedCityId, 'food', e.target.childNodes[0].value ])}
+          { this.props.updateCityDetails([ this.props.clickedCityId, 3, e.target.childNodes[0].value, 'food', this.props.clickedCityName ])}
           }}>
 
         <input type="text"></input> 
         <button type="submit">Add</button>
         </form>
 
-        <h5>Hydration Station</h5>
+        <h4>Hydration Station</h4>
         <ul>{ drinkList }</ul>
         <form onSubmit={(e)=> {
           e.preventDefault();
-          { this.props.addList([ this.props.clickedCityId, 'drink', e.target.childNodes[0].value ])}
+          { this.props.updateCityDetails([ this.props.clickedCityId, 4, e.target.childNodes[0].value, 'drink', this.props.clickedCityName ])}
           }}>
 
         <input type="text"></input> 
         <button type="submit">Add</button>
         </form>
 
-        <h5>Notes</h5>
+        <h4>Notes</h4>
         <ul>{ notesList }</ul>
         <form onSubmit={(e)=> {
           e.preventDefault();
-          { this.props.addList([ this.props.clickedCityId, 'notes', e.target.childNodes[0].value ])}
+          { this.props.updateCityDetails([ this.props.clickedCityId, 5, e.target.childNodes[0].value, 'notes', this.props.clickedCityName ])}
           }}>
 
         <input type="text"></input> 
