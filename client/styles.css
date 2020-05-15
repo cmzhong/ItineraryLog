@@ -1,6 +1,3 @@
-/* classname is with a .
-id is with a # */
-
 body {
     box-sizing: border-box;
     font-family: 'Courier New', Courier, monospace;
@@ -89,8 +86,3 @@ ul {
   margin-right: 1em;
   color: #4d4d00;
 }
-
-/* align city page's things to the left */
-/* #lists {
-
-} */
