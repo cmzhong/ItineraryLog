@@ -1,5 +1,5 @@
 {
-  "name": "ItineraryLog",
+  "name": "iterinarylog",
   "description": "Application for storing and managing multiple trip itineraries in one place",
   "version": "1.0.0",
   "main": "server/server.js",
@@ -8,7 +8,7 @@
     "dev": "webpack-dev-server",
     "build": "webpack"
   },
-  "author": "Cherie zhong",
+  "author": "Cherie Zhong",
   "license": "ISC",
   "dependencies": {
     "express": "^4.17.1",
