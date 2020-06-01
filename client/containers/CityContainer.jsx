@@ -18,13 +18,9 @@ class CityContainer extends Component {
     super(props)
   }
 
-  componentDidMount(){
-    this.props.loadCityData(this.props.clickedCityId);  
-  }
-
-  componentDidUpdate(){
-    this.props.loadCityData(this.props.clickedCityId);  
-  }
+  // componentDidMount(){
+  //   this.props.loadCityData(this.props.clickedCityId);  
+  // }
 
   render(){
 

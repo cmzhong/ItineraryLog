@@ -1,6 +1,6 @@
 {
-  "name": "cherizzle",
-  "description": "my solo proj",
+  "name": "ItineraryLog",
+  "description": "Application for storing and managing multiple trip itineraries in one place",
   "version": "1.0.0",
   "main": "server/server.js",
   "scripts": {
@@ -8,12 +8,11 @@
     "dev": "webpack-dev-server",
     "build": "webpack"
   },
-  "author": "cherizzle zhong",
+  "author": "Cherie zhong",
   "license": "ISC",
   "dependencies": {
     "express": "^4.17.1",
     "http-server": "^0.12.1",
-    "nodemon": "^2.0.3",
     "pg": "^8.0.2",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
@@ -31,6 +30,7 @@
     "axios": "^0.19.2",
     "babel-loader": "^8.1.0",
     "css-loader": "^3.5.2",
+    "nodemon": "^2.0.3",
     "redux-thunk": "^2.3.0",
     "sass-loader": "^8.0.2",
     "style-loader": "^1.1.3",
