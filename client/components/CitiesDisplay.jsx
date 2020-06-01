@@ -14,13 +14,14 @@ const CitiesDisplay = (props) => {
   return (
     <div className="displayBox">
     <h3>Cities</h3>
-    { showAllCities ?
-     cities
-     : <CityContainer deleteDatabaseCity={ props.deleteDatabaseCity } 
-     cityClicked={ props.cityClicked } clickedCityId={ props.clickedCityId } 
-     clickedCityName = { props.clickedCityName } deleteCity={ props.deleteCity } /> 
-    }
-    
+      <div className="cities">
+      { showAllCities ?
+      cities
+      : <CityContainer deleteDatabaseCity={ props.deleteDatabaseCity } 
+      cityClicked={ props.cityClicked } clickedCityId={ props.clickedCityId } 
+      clickedCityName = { props.clickedCityName } deleteCity={ props.deleteCity } /> 
+      }
+      </div>
     </div>
     )
 }

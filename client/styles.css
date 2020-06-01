@@ -47,6 +47,7 @@ h2 {
 
 /* the main container's headers */
 h3 {
+  font-size: 3em;
   color: #78364f;
 }
 
@@ -95,6 +96,16 @@ h4 {
 
 .submit {
   font-size: 1.25em;
+}
+
+.cities {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+
+.buttonText {
+  margin: 1em;
 }
 
 ul {
