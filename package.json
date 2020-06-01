@@ -12,6 +12,7 @@
   "license": "ISC",
   "dependencies": {
     "express": "^4.17.1",
+    "file-loader": "^6.0.0",
     "http-server": "^0.12.1",
     "pg": "^8.0.2",
     "react": "^16.13.1",
