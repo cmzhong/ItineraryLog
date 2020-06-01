@@ -2,7 +2,7 @@ import React from 'react';
 
 const CreateDeleteCitiesDisplay = props => (
   <div className="createCity">
-    <text className="createCityText">Create a City:</text>
+    <span className="createCityText">Create a City:</span>
     <form onSubmit={(e)=> {
         e.preventDefault();
         { props.newDatabaseCity(e.target.childNodes[0].value) }
