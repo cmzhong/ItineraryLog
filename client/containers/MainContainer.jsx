@@ -11,8 +11,7 @@ class MainContainer extends Component{
     return(
       <div className="main">
         <div className="outerbox">
-          <h1 id="header">cherizzle's</h1>
-          <h1 id="header"> Itinerary Log</h1>
+          <h1 id="header"> ItineraryLog</h1>
          <ItineraryContainer /> 
         </div>
       </div>

@@ -4,7 +4,7 @@ import reducers from './reducers/index.js';
 import thunk from 'redux-thunk'
 
 
-// we are adding composeWithDevTools here to get easy access to the Redux dev tools
+// adding composeWithDevTools here to get easy access to the Redux dev tools
 const store = createStore(
   reducers,
   composeWithDevTools(applyMiddleware(thunk))

@@ -9,8 +9,9 @@ body {
 }
 
 #header {
-    letter-spacing: .3em;
-    margin-bottom: 10px;
+  font-size: 4em;
+  letter-spacing: .3em;
+  margin-bottom: 10px;
 }
 
 /* general buttons */
@@ -29,12 +30,6 @@ button {
     border-radius: 5px 5px;
     color: #71684A;
 }
-/* get hover over delete button to have box shadow red to work eventually */
-/* #id:hover {
-  box-shadow: 
-  inset 0em -.1em .1em red, 
-        .1em .1em .1em red;
-} */
 
 /* when you hover over any button */
 button:hover {
@@ -65,18 +60,41 @@ h4 {
 
 /* the main container */
 .outerBox {
-    max-width: 600px;
-    margin: 0 auto;
-    padding: 10px;
-    box-shadow: 2px 2px 2px rgba(0, 0, 0, .2);
-    border-radius: 5px;
+  box-shadow: 2px 2px 2px rgba(0, 0, 0, .2);
+  border-radius: 5px;
 }
 
 .innerbox {
-    background: #f0ead6;
-    padding: 1px;
-    width: 85%;
-    margin: 5px auto;
+  background: #f0ead6;
+  padding: 2em;
+  width: 90vw;
+  box-shadow: 1px 1px 1px 1px rgb(180, 175, 175);
+}
+
+.createCity {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: baseline;
+  background: #f0ead6;
+  width: 95%;
+  margin: 0;
+  box-shadow: 1px 1px 1px 1px rgb(180, 175, 175);
+}
+
+.createCityText {
+  font-size: 2em;
+  margin: 1em;
+}
+
+.input {
+  width: 35vw;
+  height: 5vh;
+  margin-left: 1em;
+}
+
+.submit {
+  font-size: 1.25em;
 }
 
 ul {

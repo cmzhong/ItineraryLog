@@ -1,16 +1,16 @@
 import React from 'react';
 
 const CreateDeleteCitiesDisplay = props => (
-  <div className="innerbox">
-    <h3>Create a City</h3>
+  <div className="createCity">
+    <text className="createCityText">Create a City:</text>
     <form onSubmit={(e)=> {
         e.preventDefault();
         { props.newDatabaseCity(e.target.childNodes[0].value) }
 
     }}>
 
-    <input type="text"></input> 
-    <button type="submit">Create City</button>
+    <input type="text" className="input" ></input> 
+    <button type="submit" className="submit">Create City</button>
     </form>
   </div>
 )

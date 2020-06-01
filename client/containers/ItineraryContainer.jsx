@@ -5,7 +5,6 @@ import CitiesDisplay from '../components/CitiesDisplay';
 import * as actions from '../actions/actions';
 
 const mapStateToProps = state => ({
-    // itinerary refers to itinerary's value in index.js
     citiesList: state.itinerary.citiesList,
     lastCityId: state.itinerary.lastCityId,
     newCity: state.itinerary.newCity,
@@ -15,8 +14,6 @@ const mapStateToProps = state => ({
 })
 
 const mapDispatchToProps = dispatch =>({
-  // functions that will dispatch action creators
-  // variables are created in actionTypes.js
   addCity: (name)=>dispatch(actions.addCity(name)),
   deleteCity: (cityId)=>dispatch(actions.deleteCity(cityId)),
   cityClicked: ([ cityId, cityName ])=>dispatch(actions.cityClicked( [ cityId, cityName ] )),
@@ -36,14 +33,12 @@ class ItineraryContainer extends Component {
 
     render(){
         return(
-            // maybe change className to innerbox2 later?
             <div className="innerbox">
                 <CreateDeleteCitiesDisplay newDatabaseCity={ this.props.newDatabaseCity } addCity={ this.props.addCity } /> 
                 <CitiesDisplay citiesList={ this.props.citiesList } cityClicked={ this.props.cityClicked } 
                 showAllCities={ this.props.showAllCities } clickedCityId={ this.props.clickedCityId } 
                 clickedCityName={ this.props.clickedCityName } deleteCity={ this.props.deleteCity }
                 deleteDatabaseCity={ this.props.deleteDatabaseCity } /> 
-                {/* potential save button */}
             </div>
         )
     }
