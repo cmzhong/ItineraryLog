@@ -41,6 +41,7 @@ module.exports = {
             options: {
               name: 'images/[name].[ext]'
             }
+          }
         ]
       },
     devServer: {

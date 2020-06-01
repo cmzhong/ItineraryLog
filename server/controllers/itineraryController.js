@@ -84,7 +84,7 @@ itineraryController.getCityDetails = (req, res, next) => {
   const cityId = [req.query.cityId]
 
   db.query(cityDetails, cityId)
-    .then(() => {
+    .then(cityDetails => {
       console.log('cityDetails: ', cityDetails);
       next();
     })

@@ -1,11 +1,13 @@
+@import url('https://fonts.googleapis.com/css2?family=Source+Code+Pro:wght@300&display=swap');
+
 body {
     box-sizing: border-box;
-    font-family: 'Courier New', Courier, monospace;
+    font-family: 'Source Code Pro', monospace;
     margin: 2;
     padding: 0;
     color: #00416a;
-    text-shadow: 2px 2px #f0ead6;
-    background-color: #b6c5b8;
+    text-shadow: 3px 3px #b1e6b8;
+    background-color: #eeeeee;
 }
 
 #header {
@@ -47,21 +49,20 @@ h2 {
 
 /* the main container's headers */
 h3 {
-  font-size: 3em;
+  font-size: 2em;
   color: #78364f;
 }
 
 /* the city page's page headers */
 h4 {
-  text-align: left;
-  margin-left: 5em;
+  font-size: 2em;
   text-decoration: underline;
   text-shadow: none;
 }
 
 /* the main container */
 .outerBox {
-  box-shadow: 2px 2px 2px rgba(0, 0, 0, .2);
+  box-shadow: 2px 2px 2px #b6c5b8;
   border-radius: 5px;
 }
 
@@ -85,17 +86,17 @@ h4 {
 
 .createCityText {
   font-size: 2em;
-  margin: 1em;
 }
 
 .input {
   width: 35vw;
-  height: 5vh;
+  height: 30px;
   margin-left: 1em;
 }
 
 .submit {
   font-size: 1.25em;
+  margin-top: 1em;
 }
 
 .cities {
@@ -107,6 +108,7 @@ h4 {
 .buttonText {
   margin: 1em;
 }
+
 
 ul {
   list-style-type: circle;
