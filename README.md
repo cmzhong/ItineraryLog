@@ -1,4 +1,4 @@
-<img src='/images/readme.png'>
+<img src='./images/readme.png'>
 
 # ItineraryLog
 
